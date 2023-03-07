@@ -18,15 +18,10 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="{{ route('administrator.index') }}"
-                        class="waves-effect {{ set_active(['administrator.index']) }}">
+                    <a href="" class="waves-effect ">
                         <i class="mdi mdi-home-analytics"></i><span>Dashboard</span></a>
                 </li>
-                <li>
-                    <a href="{{ route('pengguna_app.index') }}"
-                        class="waves-effect {{ set_active(['pengguna_app.index']) }}">
-                        <i class="mdi mdi-account-group"></i><span>Pengguna App</span></a>
-                </li>
+
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect"><i

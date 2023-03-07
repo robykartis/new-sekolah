@@ -17,6 +17,8 @@
     <link href="{{ asset('template/admin/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/admin/assets/css/theme.min.css') }}" rel="stylesheet" type="text/css" />
 
+    @stack('css-page')
+
 </head>
 
 <body>
@@ -27,7 +29,20 @@
         @include('admin.layouts.navbar')
 
         <!-- ========== Left Sidebar Start ========== -->
-        @include('admin.layouts.sidebar.administrator')
+
+        @if (Auth::user()->role == 'administrator')
+            @include('admin.layouts.sidebar.administrator')
+        @elseif(Auth::user()->role == 'kepala_sekolah')
+            @include('admin.layouts.sidebar.kepala_sekolah')
+        @elseif(Auth::user()->role == 'guru_sekolah')
+            @include('admin.layouts.sidebar.guru_sekolah')
+        @elseif(Auth::user()->role == 'staff_sekolah')
+            @include('admin.layouts.sidebar.staff_sekolah')
+        @elseif(Auth::user()->role == 'orangtua_siswa')
+            @include('admin.layouts.sidebar.orangtua_siswa')
+        @else
+            @include('admin.layouts.sidebar.siswa')
+        @endif
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->
@@ -101,6 +116,9 @@
 
     <!-- App js -->
     <script src="{{ asset('template/admin/assets/js/theme.js') }}"></script>
+
+
+    @stack('js-page')
 
 </body>
 
