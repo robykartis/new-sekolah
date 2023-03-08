@@ -32,7 +32,7 @@ class User extends Authenticatable
         if ($this->image && file_exists(public_path('images/pengguna/' . $this->image)))
             unlink(public_path('images/pengguna/' . $this->image));
         if ($this->image && file_exists(public_path('images/pengguna/small/small_' . $this->image)))
-            unlink(public_path('images/pengguna/smal/small_' . $this->image));
+            unlink(public_path('images/pengguna/small/small_' . $this->image));
     }
     /**
      * The attributes that should be hidden for serialization.

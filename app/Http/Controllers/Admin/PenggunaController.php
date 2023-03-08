@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
+use Intervention\Image\Facades\Image;
 
 class PenggunaController extends Controller
 {
@@ -35,7 +38,35 @@ class PenggunaController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.pengguna.create');
+        $role = [
+            [
+                'name' => 'Administrator',
+                'value' => 'administrator'
+            ],
+            [
+                'name' => 'Kepala Sekolah',
+                'value' => 'kepala_sekolah'
+            ],
+            [
+                'name' => 'Guru Sekolah',
+                'value' => 'guru_sekolah'
+            ],
+            [
+                'name' => 'Staff Sekolah',
+                'value' => 'staff_sekolah'
+            ],
+            [
+                'name' => 'Orangtua Siswa',
+                'value' => 'orangtua_siswa'
+            ],
+            [
+                'name' => 'Siswa',
+                'value' => 'siswa'
+            ],
+
+        ];
+        $judul = 'Tambah Data Pengguna';
+        return view('admin.pages.pengguna.create', compact('role', 'judul'));
     }
 
     /**
@@ -43,7 +74,47 @@ class PenggunaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'role' => 'required',
+            'password' => 'required|string|confirmed|min:8',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ], [
+            'name.required' => 'Nama pengguna tidak boleh kosong',
+            'email.required' => 'Email tidak boleh kosong',
+            'role.required' => 'Pilih salah satu role akun pengguna',
+            'password.required' => 'Password harap tidak boleh kosong',
+            'foto.required' => 'Masukan foto pengguna'
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        try {
+            $image = $request->file('foto');
+            $file_name = rand(1000, 9999) . $image->getClientOriginalName();
+
+            $img = Image::make($image->path());
+            $img->resize('180', '120')
+                ->save(public_path('images/pengguna/small') . '/small_' . $file_name);
+            $image->move('images/pengguna', $file_name);
+
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->role = $request->role;
+            $user->password = Hash::make($request->password);
+            $user->foto = $file_name;
+            $user->save();
+
+            return redirect()->route('pengguna_app.index')->with('success', 'Tambah Data Berhasil');
+        } catch (\Illuminate\Database\QueryException $e) {
+            if ($e->errorInfo[1] == 1062) {
+                return back()->with('error', 'Email Sudah Terdaftar')->withInput();
+            }
+        }
     }
 
     /**
@@ -57,17 +128,87 @@ class PenggunaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $data = User::findOrFail($id);
+        $role = [
+            [
+                'name' => 'Administrator',
+                'value' => 'administrator'
+            ],
+            [
+                'name' => 'Kepala Sekolah',
+                'value' => 'kepala_sekolah'
+            ],
+            [
+                'name' => 'Guru Sekolah',
+                'value' => 'guru_sekolah'
+            ],
+            [
+                'name' => 'Staff Sekolah',
+                'value' => 'staff_sekolah'
+            ],
+            [
+                'name' => 'Orangtua Siswa',
+                'value' => 'orangtua_siswa'
+            ],
+            [
+                'name' => 'Siswa',
+                'value' => 'siswa'
+            ],
+
+        ];
+
+        $judul = 'Edit Data Pengguna';
+        return view('admin.pages.pengguna.edit', compact('role', 'judul', 'data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,  $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'role' => 'required',
+            'password' => 'required|string|confirmed|min:8',
+            'foto' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ], [
+            'name.required' => 'Nama pengguna tidak boleh kosong',
+            'email.required' => 'Email tidak boleh kosong',
+            'role.required' => 'Pilih salah satu role akun pengguna',
+            'password.required' => 'Password harap tidak boleh kosong',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        try {
+            $user = User::findOrFail($id);
+            if ($request->hasFile('foto')) {
+                $user->delete_image();
+                $image = $request->file('foto');
+                $file_name = rand(1000, 9999) . $image->getClientOriginalName();
+                $img = Image::make($image->path());
+                $img->resize('180', '120')
+                    ->save(public_path('images/pengguna/small') . '/small_' . $file_name);
+                $image->move('images/pengguna', $file_name);
+                $user->image = $file_name;
+            }
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->role = $request->role;
+            if ($request->password)
+                $user->password = Hash::make($request->password);
+            $user->save();
+
+            return redirect()->route('pengguna_app.index')
+                ->with('success', 'Data Pengguna Berhasil di Rubah');
+        } catch (\Throwable $e) {
+            echo $e->getMessage();
+        }
     }
 
     /**

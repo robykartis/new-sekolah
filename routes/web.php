@@ -43,9 +43,10 @@ Route::middleware(['auth', 'administrator:admin'])->group(function () {
             Route::controller(PenggunaController::class)->group(function () {
                 Route::get('/', 'index')->name('pengguna_app.index');
                 Route::get('/tambah', 'create')->name('pengguna_app.create');
+                Route::post('/simpan', 'store')->name('pengguna_app.store');
                 Route::get('/detail/{id}', 'show')->name('pengguna_app.show');
                 Route::get('/edit/{id}', 'edit')->name('pengguna_app.edit');
-                Route::post('/rubah/{id}', 'update')->name('pengguna_app.update');
+                Route::put('/rubah/{id}', 'update')->name('pengguna_app.update');
                 Route::get('/hapus/{id}', 'destroy')->name('pengguna_app.destroy');
             });
         });
