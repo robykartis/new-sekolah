@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>OneUI - Bootstrap 5 Admin Template &amp; UI Framework</title>
+    <title>{{ config('app.name') }} | @yield('title')</title>
 
     <meta name="description"
         content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
@@ -63,78 +63,7 @@
                     </button>
                     <!-- END Dark Mode -->
 
-                    <!-- Options -->
-                    <div class="dropdown d-inline-block ms-1">
-                        <button type="button" class="btn btn-sm btn-alt-secondary" id="sidebar-themes-dropdown"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-brush"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end fs-sm smini-hide border-0"
-                            aria-labelledby="sidebar-themes-dropdown">
-                            <!-- Color Themes -->
-                            <!-- Layout API, functionality initialized in Template._uiHandleTheme() -->
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="default" href="#">
-                                <span>Default</span>
-                                <i class="fa fa-circle text-default"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="assets/css/themes/amethyst.min.css" href="#">
-                                <span>Amethyst</span>
-                                <i class="fa fa-circle text-amethyst"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="assets/css/themes/city.min.css" href="#">
-                                <span>City</span>
-                                <i class="fa fa-circle text-city"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="assets/css/themes/flat.min.css" href="#">
-                                <span>Flat</span>
-                                <i class="fa fa-circle text-flat"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="assets/css/themes/modern.min.css" href="#">
-                                <span>Modern</span>
-                                <i class="fa fa-circle text-modern"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="assets/css/themes/smooth.min.css" href="#">
-                                <span>Smooth</span>
-                                <i class="fa fa-circle text-smooth"></i>
-                            </a>
-                            <!-- END Color Themes -->
 
-                            <div class="dropdown-divider"></div>
-
-                            <!-- Sidebar Styles -->
-                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="sidebar_style_light"
-                                href="javascript:void(0)">
-                                <span>Sidebar Light</span>
-                            </a>
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="sidebar_style_dark"
-                                href="javascript:void(0)">
-                                <span>Sidebar Dark</span>
-                            </a>
-                            <!-- END Sidebar Styles -->
-
-                            <div class="dropdown-divider"></div>
-
-                            <!-- Header Styles -->
-                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_light"
-                                href="javascript:void(0)">
-                                <span>Header Light</span>
-                            </a>
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_dark"
-                                href="javascript:void(0)">
-                                <span>Header Dark</span>
-                            </a>
-                            <!-- END Header Styles -->
-                        </div>
-                    </div>
-                    <!-- END Options -->
 
                     <!-- Close Sidebar, Visible only on mobile screens -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
@@ -168,45 +97,14 @@
             <!-- Hero -->
             <div class="content">
                 <div
-                    class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center py-2 text-center text-md-start">
+                    class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center py-1 text-center text-md-start">
                     <div class="flex-grow-1 mb-1 mb-md-0">
                         <h1 class="h3 fw-bold mb-2">
-                            Dashboard
+                            @yield('title')
                         </h1>
-                        <h2 class="h6 fw-medium fw-medium text-muted mb-0">
-                            Welcome <a class="fw-semibold" href="be_pages_generic_profile.html">John</a>, everything
-                            looks great.
-                        </h2>
                     </div>
                     <div class="mt-3 mt-md-0 ms-md-3 space-x-1">
-                        <a class="btn btn-sm btn-alt-secondary space-x-1" href="be_pages_generic_profile_edit.html">
-                            <i class="fa fa-cogs opacity-50"></i>
-                            <span>Settings</span>
-                        </a>
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn btn-sm btn-alt-secondary space-x-1"
-                                id="dropdown-analytics-overview" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fa fa-fw fa-calendar-alt opacity-50"></i>
-                                <span>All time</span>
-                                <i class="fa fa-fw fa-angle-down"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end fs-sm"
-                                aria-labelledby="dropdown-analytics-overview">
-                                <a class="dropdown-item fw-medium" href="javascript:void(0)">Last 30 days</a>
-                                <a class="dropdown-item fw-medium" href="javascript:void(0)">Last month</a>
-                                <a class="dropdown-item fw-medium" href="javascript:void(0)">Last 3 months</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item fw-medium" href="javascript:void(0)">This year</a>
-                                <a class="dropdown-item fw-medium" href="javascript:void(0)">Last Year</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item fw-medium d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span>All time</span>
-                                    <i class="fa fa-check"></i>
-                                </a>
-                            </div>
-                        </div>
+                        @yield('breadcrumbs')
                     </div>
                 </div>
             </div>
@@ -227,8 +125,7 @@
 
     <script src="{{ asset('template/admin/assets/js/oneui.app.min.js') }}"></script>
 
-    <!-- Page JS Plugins -->
-    <script src="{{ asset('template/admin/assets/js/plugins/chart.js/chart.min.js') }}"></script>
+
 
     <!-- Page JS Code -->
     <script src="{{ asset('template/admin/assets/js/pages/be_pages_dashboard.min.js') }}"></script>

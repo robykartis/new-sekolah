@@ -3,8 +3,16 @@
     <div class="content-side">
         <ul class="nav-main">
             <li class="nav-main-item">
-                <a class="nav-main-link active" href="be_pages_dashboard.html">
+                <a class="nav-main-link {{ set_active(['administrator.index']) }}"
+                    href="{{ route('administrator.index') }}">
                     <i class="nav-main-link-icon si si-speedometer"></i>
+                    <span class="nav-main-link-name">Dashboarddd</span>
+                </a>
+            </li>
+            <li class="nav-main-item">
+                <a class="nav-main-link {{ set_active(['pengguna_app.index']) }}"
+                    href="{{ route('pengguna_app.index') }}">
+                    <i class="nav-main-link-icon si si-users"></i>
                     <span class="nav-main-link-name">Dashboarddd</span>
                 </a>
             </li>
