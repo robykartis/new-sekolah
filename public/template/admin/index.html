@@ -1,831 +1,871 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <head>
-        <meta charset="utf-8" />
-        <title> Xeloro - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="MyraStudio" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>OneUI - Bootstrap 5 Admin Template &amp; UI Framework</title>
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <meta name="description" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta name="author" content="pixelcave">
+    <meta name="robots" content="noindex, nofollow">
 
-        <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/theme.min.css" rel="stylesheet" type="text/css" />
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework">
+    <meta property="og:site_name" content="OneUI">
+    <meta property="og:description" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-    </head>
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
 
-    <body>
+    <!-- Stylesheets -->
+    <!-- OneUI framework -->
+    <link rel="stylesheet" id="css-main" href="assets/css/oneui.min.css">
 
-        <!-- Begin page -->
-        <div id="layout-wrapper">
-            <div class="header-border"></div>
-            <header id="page-topbar">
-                <div class="navbar-header">
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
+    <!-- END Stylesheets -->
+  </head>
 
-                    <div class="d-flex align-items-left">
-                        <button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect"
-                            id="vertical-menu-btn">
-                            <i class="fa fa-fw fa-bars"></i>
-                        </button>
+  <body>
+    <!-- Page Container -->
+    <!--
+        Available classes for #page-container:
 
-                        <div class="dropdown d-none d-sm-inline-block">
-                            <button type="button" class="btn header-item waves-effect"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="mdi mdi-plus"></i> Create New
-                                <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
-                            </button>
-                            <div class="dropdown-menu">
+    GENERIC
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    Application
-                                </a>
+      'remember-theme'                            Remembers active color theme and dark mode between pages using localStorage when set through
+                                                  - Theme helper buttons [data-toggle="theme"],
+                                                  - Layout helper buttons [data-toggle="layout" data-action="dark_mode_[on/off/toggle]"]
+                                                  - ..and/or One.layout('dark_mode_[on/off/toggle]')
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    Software
-                                </a>
+    SIDEBAR & SIDE OVERLAY
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    EMS System
-                                </a>
+      'sidebar-r'                                 Right Sidebar and left Side Overlay (default is left Sidebar and right Side Overlay)
+      'sidebar-mini'                              Mini hoverable Sidebar (screen width > 991px)
+      'sidebar-o'                                 Visible Sidebar by default (screen width > 991px)
+      'sidebar-o-xs'                              Visible Sidebar by default (screen width < 992px)
+      'sidebar-dark'                              Dark themed sidebar
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    CRM App
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+      'side-overlay-hover'                        Hoverable Side Overlay (screen width > 991px)
+      'side-overlay-o'                            Visible Side Overlay by default
 
-                    <div class="d-flex align-items-center">
+      'enable-page-overlay'                       Enables a visible clickable Page Overlay (closes Side Overlay on click) when Side Overlay opens
 
-                        <div class="dropdown d-none d-sm-inline-block ml-2">
-                            <button type="button" class="btn header-item noti-icon waves-effect"
-                                id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="mdi mdi-magnify"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                                aria-labelledby="page-header-search-dropdown">
+      'side-scroll'                               Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (screen width > 991px)
 
-                                <form class="p-3">
-                                    <div class="form-group m-0">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ..."
-                                                aria-label="Recipient's username">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="submit"><i
-                                                        class="mdi mdi-magnify"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+    HEADER
 
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item waves-effect"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
-                                <span class="d-none d-sm-inline-block ml-1">English</span>
-                                <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
+      ''                                          Static Header if no class is added
+      'page-header-fixed'                         Fixed Header
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12">
-                                    <span class="align-middle">Spanish</span>
-                                </a>
+    HEADER STYLE
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12">
-                                    <span class="align-middle">German</span>
-                                </a>
+      ''                                          Light themed Header
+      'page-header-dark'                          Dark themed Header
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12">
-                                    <span class="align-middle">Italian</span>
-                                </a>
+    MAIN CONTENT LAYOUT
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12">
-                                    <span class="align-middle">Russian</span>
-                                </a>
-                            </div>
-                        </div>
+      ''                                          Full width Main Content if no class is added
+      'main-content-boxed'                        Full width Main Content with a specific maximum width (screen width > 1200px)
+      'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
 
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item noti-icon waves-effect"
-                                id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="mdi mdi-bell"></i>
-                                <span class="badge badge-danger badge-pill">3</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                                aria-labelledby="page-header-notifications-dropdown">
-                                <div class="p-3">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="m-0"> Notifications </h6>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="#!" class="small"> View All</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-simplebar style="max-height: 230px;">
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <img src="assets/images/users/avatar-2.jpg"
-                                                class="mr-3 rounded-circle avatar-xs" alt="user-pic">
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Samuel Coverdale</h6>
-                                                <p class="font-size-12 mb-1">You have new follower on Instagram</p>
-                                                <p class="font-size-12 mb-0 text-muted"><i
-                                                        class="mdi mdi-clock-outline"></i> 2 min ago</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
-                                                <span class="avatar-title bg-success rounded-circle">
-                                                    <i class="mdi mdi-cloud-download-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Download Available !</h6>
-                                                <p class="font-size-12 mb-1">Latest version of admin is now available.
-                                                    Please download here.</p>
-                                                <p class="font-size-12 mb-0 text-muted"><i
-                                                        class="mdi mdi-clock-outline"></i> 4 hours ago</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <img src="assets/images/users/avatar-3.jpg"
-                                                class="mr-3 rounded-circle avatar-xs" alt="user-pic">
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Victoria Mendis</h6>
-                                                <p class="font-size-12 mb-1">Just upgraded to premium account.</p>
-                                                <p class="font-size-12 mb-0 text-muted"><i
-                                                        class="mdi mdi-clock-outline"></i> 1 day ago</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="p-2 border-top">
-                                    <a class="btn btn-sm btn-light btn-block text-center" href="javascript:void(0)">
-                                        <i class="mdi mdi-arrow-down-circle mr-1"></i> Load More..
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+    DARK MODE
 
-                        <div class="dropdown d-inline-block ml-2">
-                            <button type="button" class="btn header-item waves-effect"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg"
-                                    alt="Header Avatar">
-                                <span class="d-none d-sm-inline-block ml-1">Donald M.</span>
-                                <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span>Inbox</span>
-                                    <span>
-                                        <span class="badge badge-pill badge-info">3</span>
-                                    </span>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span>Profile</span>
-                                    <span>
-                                        <span class="badge badge-pill badge-warning">1</span>
-                                    </span>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    Settings
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span>Lock Account</span>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span>Log Out</span>
-                                </a>
-                            </div>
-                        </div>
+      'sidebar-dark page-header-dark dark-mode'   Enable dark mode (light sidebar/header is not supported with dark mode)
+    -->
+    <div id="page-container" class="page-header-fixed main-content-boxed">
 
-                    </div>
-                </div>
-            </header>
+      <!-- Header -->
+      <header id="page-header">
+        <!-- Header Content -->
+        <div class="content-header">
+          <!-- Left Section -->
+          <div class="d-flex align-items-center">
+            <!-- Logo -->
+            <a class="fw-bold fs-lg tracking-wider text-dual me-2" href="index.html">
+              One<span class="fw-semibold">UI</span>
+            </a>
+            <!-- END Logo -->
 
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="vertical-menu">
+            <!-- Version -->
+            <div class="fs-xs fw-medium py-1 px-3 rounded-pill bg-body-dark text-dark">v5.5</div>
+            <!-- END Version -->
+          </div>
+          <!-- END Left Section -->
 
-                <div data-simplebar class="h-100">
+          <!-- Right Section -->
+          <div class="d-flex align-items-center">
+            <!-- Navigation -->
+            <ul class="nav-main nav-main-horizontal nav-main-hover d-none d-lg-block me-2">
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="#one-vue-edition">
+                  <i class="nav-main-link-icon fab fa-vuejs"></i>
+                  <span class="nav-main-link-name">Vue Edition</span>
+                </a>
+              </li>
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="#one-versions">
+                  <i class="nav-main-link-icon fa fa-box"></i>
+                  <span class="nav-main-link-name">Versions</span>
+                </a>
+              </li>
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="#one-features">
+                  <i class="nav-main-link-icon fa fa-rocket"></i>
+                  <span class="nav-main-link-name">Features</span>
+                </a>
+              </li>
+            </ul>
+            <!-- END Navigation -->
 
-                    <div class="navbar-brand-box">
-                        <a href="index.html" class="logo">
-                            <i class="mdi mdi-album"></i>
-                            <span>
-                                Xeloro
-                            </span>
-                        </a>
-                    </div>
+            <!-- Dark Mode -->
+            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+            <button type="button" class="btn btn-alt-secondary me-1" data-toggle="layout" data-action="dark_mode_toggle">
+              <i class="far fa-moon"></i>
+            </button>
+            <!-- END Dark Mode -->
 
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title">Menu</li>
-
-                            <li>
-                                <a href="index.html" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span
-                                        class="badge badge-pill badge-primary float-right">7</span><span>Dashboard</span></a>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                                        class="mdi mdi-diamond-stone"></i><span>UI Elements</span></a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ui-buttons.html">Buttons</a></li>
-                                    <li><a href="ui-cards.html">Cards</a></li>
-                                    <li><a href="ui-carousel.html">Carousel</a>
-                                    <li><a href="ui-embeds.html">Embeds</a>
-                                    <li><a href="ui-general.html">General</a></li>
-                                    <li><a href="ui-grid.html">Grid</a></li>
-                                    <li><a href="ui-media-objects.html">Media Objects</a></li>
-                                    <li><a href="ui-modals.html">Modals</a></li>
-                                    <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                                    <li><a href="ui-tabs.html">Tabs</a></li>
-                                    <li><a href="ui-typography.html">Typography</a></li>
-                                    <li><a href="ui-toasts.html">Toasts</a></li>
-                                    <li><a href="ui-tooltips-popovers.html">Tooltips & Popovers</a></li>
-                                    <li><a href="ui-scrollspy.html">Scrollspy</a></li>
-                                    <li><a href="ui-spinners.html">Spinners</a></li>
-                                    <li><a href="ui-sweetalerts.html">Sweet Alerts</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                                        class="mdi mdi-table-merge-cells"></i><span>Tables</span></a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="tables-basic.html">Basic Tables</a></li>
-                                    <li><a href="tables-datatables.html">Data Tables</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                                        class="mdi mdi-poll"></i><span>Charts</span></a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="charts-morris.html">Morris</a></li>
-                                    <li><a href="charts-google.html">Google</a></li>
-                                    <li><a href="charts-chartjs.html">Chartjs</a></li>
-                                    <li><a href="charts-sparkline.html">Sparkline</a></li>
-                                    <li><a href="charts-knob.html">Jquery Knob</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="waves-effect"><i
-                                        class="mdi mdi-format-list-bulleted-type"></i><span
-                                        class="badge badge-pill badge-danger float-right">6</span><span>Forms</span></a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="forms-elements.html">Elements</a></li>
-                                    <li><a href="forms-plugins.html">Plugins</a></li>
-                                    <li><a href="forms-validation.html">Validation</a></li>
-                                    <li><a href="forms-mask.html">Masks</a></li>
-                                    <li><a href="forms-quilljs.html">Quilljs</a></li>
-                                    <li><a href="forms-uploads.html">File Uploads</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                                        class="mdi mdi-black-mesa"></i><span>Icons</span></a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="icons-materialdesign.html">Material Design</a></li>
-                                    <li><a href="icons-fontawesome.html">Font awesome</a></li>
-                                    <li><a href="icons-dripicons.html">Dripicons</a></li>
-                                    <li><a href="icons-feather.html">Feather Icons</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="menu-title">More</li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                                        class="mdi mdi-format-page-break"></i><span>Pages</span></a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="pages-invoice.html">Invoice</a></li>
-                                    <li><a href="pages-starter.html">Starter Page</a></li>
-                                    <li><a href="pages-maintenance.html">Maintenance</a></li>
-                                    <li><a href="pages-faqs.html">FAQs</a></li>
-                                    <li><a href="pages-pricing.html">Pricing</a></li>
-                                    <li><a href="pages-login.html">Login</a></li>
-                                    <li><a href="pages-register.html">Register</a></li>
-                                    <li><a href="pages-recoverpw.html">Recover Password</a></li>
-                                    <li><a href="pages-lock-screen.html">Lock Screen</a></li>
-                                    <li><a href="pages-404.html">Error 404</a></li>
-                                    <li><a href="pages-500.html">Error 500</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="calendar.html" class=" waves-effect"><i
-                                        class="mdi mdi-calendar-range-outline"></i><span>Calendar</span></a></li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                                        class="mdi mdi-map-marker-radius"></i><span>Maps</span></a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="maps-google.html">Google Maps</a></li>
-                                    <li><a href="maps-vector.html">Vector Maps</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                                        class="mdi mdi-share-variant"></i><span>Multi Level</span></a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li><a href="javascript: void(0);">Level 1.1</a></li>
-                                    <li><a href="javascript: void(0);" class="has-arrow">Level 1.2</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="javascript: void(0);">Level 2.1</a></li>
-                                            <li><a href="javascript: void(0);">Level 2.2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!-- Sidebar -->
-                </div>
+            <!-- Options -->
+            <div class="dropdown">
+              <button type="button" class="btn btn-alt-secondary me-2" id="sidebar-themes-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-brush"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end fs-sm smini-hide border-0" aria-labelledby="sidebar-themes-dropdown">
+                <!-- Color Themes -->
+                <!-- Layout API, functionality initialized in Template._uiHandleTheme() -->
+                <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="default" href="#">
+                  <span>Default</span>
+                  <i class="fa fa-circle text-default"></i>
+                </a>
+                <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="assets/css/themes/amethyst.min.css" href="#">
+                  <span>Amethyst</span>
+                  <i class="fa fa-circle text-amethyst"></i>
+                </a>
+                <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="assets/css/themes/city.min.css" href="#">
+                  <span>City</span>
+                  <i class="fa fa-circle text-city"></i>
+                </a>
+                <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="assets/css/themes/flat.min.css" href="#">
+                  <span>Flat</span>
+                  <i class="fa fa-circle text-flat"></i>
+                </a>
+                <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="assets/css/themes/modern.min.css" href="#">
+                  <span>Modern</span>
+                  <i class="fa fa-circle text-modern"></i>
+                </a>
+                <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="assets/css/themes/smooth.min.css" href="#">
+                  <span>Smooth</span>
+                  <i class="fa fa-circle text-smooth"></i>
+                </a>
+                <!-- END Color Themes -->
+              </div>
             </div>
-            <!-- Left Sidebar End -->
+            <!-- END Options -->
 
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
-
-                <div class="page-content">
-                    <div class="container-fluid">
-
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">Dashboard</h4>
-
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Xeloro</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
-                                        </ol>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
-
-                        <div class="row">
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">Daily</span>
-                                            <h5 class="card-title mb-0">Cost per Unit</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    $17.21
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">12.5% <i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">Per Week</span>
-                                            <h5 class="card-title mb-0">Market Revenue</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    $1875.54
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">18.71% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">Per Month</span>
-                                            <h5 class="card-title mb-0">Expenses</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    $784.62
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">57% <i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div>
-                                <!--end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <span class="badge badge-soft-primary float-right">All Time</span>
-                                            <h5 class="card-title mb-0">Daily Visits</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    1,15,187
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">17.8% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
-
-
-                        <div class="row">
-                            <div class="col-lg-9">
-
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <h4 class="card-title">Sales Analytics</h4>
-                                                <p class="card-subtitle mb-4">From date of 1st Jan 2020 to continue</p>
-                                                <div id="morris-bar-example" class="morris-chart"></div>
-                                            </div>
-
-                                            <div class="col-lg-4">
-
-                                                <h4 class="card-title">Stock</h4>
-                                                <p class="card-subtitle mb-4">Recent Stock</p>
-
-                                                <div class="text-center">
-                                                    <input data-plugin="knob" data-width="165" data-height="165"
-                                                        data-linecap=round data-fgColor="#7a08c2" value="95"
-                                                        data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                                        data-thickness=".15" />
-                                                    <h5 class="text-muted mt-3">Total sales made today</h5>
-
-
-                                                    <p class="text-muted w-75 mx-auto sp-line-2">Traditional heading
-                                                        elements are
-                                                        designed to work best in the meat of your page content.</p>
-
-                                                    <div class="row mt-3">
-                                                        <div class="col-6">
-                                                            <p class="text-muted font-15 mb-1 text-truncate">Target</p>
-                                                            <h4><i class="fas fa-arrow-up text-success mr-1"></i>$7.8k</h4>
-
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
-                                                            <h4><i class="fas fa-arrow-down text-danger mr-1"></i>$1.4k</h4>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-3">
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h4 class="card-title">Account Transactions</h4>
-                                                <p class="card-subtitle mb-4">Transaction period from 21 July to
-                                                    25 Aug</p>
-                                                <h3>$7841.12 <span class="badge badge-soft-success float-right">+7.5%</span></h3>
-                                            </div>
-                                        </div> <!-- end row -->
-
-                                        <div id="sparkline1" class="mt-3"></div>
-                                    </div>
-                                    <!--end card body-->
-                                </div>
-                                <!--end card-->
-
-                            </div><!-- end col -->
-
-                        </div>
-                        <!--end row-->
-
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="dropdown float-right position-relative">
-                                            <a href="#" class="dropdown-toggle h4 text-muted" data-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="#" class="dropdown-item">Action</a></li>
-                                                <li><a href="#" class="dropdown-item">Another action</a></li>
-                                                <li><a href="#" class="dropdown-item">Something else here</a></li>
-                                                <li class="dropdown-divider"></li>
-                                                <li><a href="#" class="dropdown-item">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                        <h4 class="card-title d-inline-block">Total Revenue</h4>
-
-                                        <div id="morris-line-example" class="morris-chart" style="height: 290px;"></div>
-
-                                        <div class="row text-center mt-4">
-                                            <div class="col-6">
-                                                <h4>$7841.12</h4>
-                                                <p class="text-muted mb-0">Total Revenue</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <h4>17</h4>
-                                                <p class="text-muted mb-0">Open Compaign</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!--end card body-->
-
-                                </div>
-                                <!--end card-->
-                            </div>
-                            <!--end col-->
-                            <div class="col-lg-6">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <h4 class="card-title">Top 5 Customers</h4>
-                                        <p class="card-subtitle mb-4 font-size-13">Transaction period from 21 July to 25 Aug
-                                        </p>
-
-                                        <div class="table-responsive">
-                                            <table class="table table-centered table-striped table-nowrap mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Customer</th>
-                                                        <th>Phone</th>
-                                                        <th>Email</th>
-                                                        <th>Location</th>
-                                                        <th>Create Date</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="table-user">
-                                                            <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="mr-2 avatar-xs rounded-circle">
-                                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Paul J. Friend</a>
-                                                        </td>
-                                                        <td>
-                                                            937-330-1634
-                                                        </td>
-                                                        <td>
-                                                            pauljfrnd@jourrapide.com
-                                                        </td>
-                                                        <td>
-                                                            New York
-                                                        </td>
-                                                        <td>
-                                                            07/07/2018
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <tr>
-                                                        <td class="table-user">
-                                                            <img src="assets/images/users/avatar-3.jpg" alt="table-user" class="mr-2 avatar-xs rounded-circle">
-                                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Bryan J. Luellen</a>
-                                                        </td>
-                                                        <td>
-                                                            215-302-3376
-                                                        </td>
-                                                        <td>
-                                                            bryuellen@dayrep.com
-                                                        </td>
-                                                        <td>
-                                                            New York
-                                                        </td>
-                                                        <td>
-                                                            09/12/2018
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="table-user">
-                                                            <img src="assets/images/users/avatar-8.jpg" alt="table-user" class="mr-2 avatar-xs rounded-circle">
-                                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Kathryn S. Collier</a>
-                                                        </td>
-                                                        <td>
-                                                            828-216-2190
-                                                        </td>
-                                                        <td>
-                                                            collier@jourrapide.com
-                                                        </td>
-                                                        <td>
-                                                            Canada
-                                                        </td>
-                                                        <td>
-                                                            06/30/2018
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="table-user">
-                                                            <img src="assets/images/users/avatar-1.jpg" alt="table-user" class="mr-2 avatar-xs rounded-circle">
-                                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Timothy Kauper</a>
-                                                        </td>
-                                                        <td>
-                                                            (216) 75 612 706
-                                                        </td>
-                                                        <td>
-                                                            thykauper@rhyta.com
-                                                        </td>
-                                                        <td>
-                                                            Denmark
-                                                        </td>
-                                                        <td>
-                                                            09/08/2018
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="table-user">
-                                                            <img src="assets/images/users/avatar-5.jpg" alt="table-user" class="mr-2 avatar-xs rounded-circle">
-                                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Zara Raws</a>
-                                                        </td>
-                                                        <td>
-                                                            (02) 75 150 655
-                                                        </td>
-                                                        <td>
-                                                            austin@dayrep.com
-                                                        </td>
-                                                        <td>
-                                                            Germany
-                                                        </td>
-                                                        <td>
-                                                            07/15/2018
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                    </div>
-                                    <!--end card body-->
-
-                                </div>
-                                <!--end card-->
-                            </div>
-                            <!--end col-->
-
-                        </div>
-                        <!--end row-->
-
-                    </div> <!-- container-fluid -->
-                </div>
-                <!-- End Page-content -->
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                2020 © Xeloro.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-right d-none d-sm-block">
-                                    Design & Develop by Myra
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-
-            </div>
-            <!-- end main content-->
-
+            <!-- Purchase Link -->
+            <a class="btn btn-success" data-toggle="click-ripple" href="https://1.envato.market/AVD6j">
+              <i class="fa fa-fw fa-shopping-cart opacity-50"></i>
+              <span class="d-none d-sm-inline-block ms-1">Purchase</span>
+            </a>
+            <!-- END Purchase Link -->
+          </div>
+          <!-- END Right Section -->
         </div>
-        <!-- END layout-wrapper -->
+        <!-- END Header Content -->
 
-        <!-- Overlay-->
-        <div class="menu-overlay"></div>
+        <!-- Header Loader -->
+        <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
+        <div id="page-header-loader" class="overlay-header bg-primary-lighter">
+          <div class="content-header">
+            <div class="w-100 text-center">
+              <i class="fa fa-fw fa-circle-notch fa-spin text-primary"></i>
+            </div>
+          </div>
+        </div>
+        <!-- END Header Loader -->
+      </header>
+      <!-- END Header -->
 
+      <!-- Main Container -->
+      <main id="main-container">
+        <!-- Hero -->
+        <div id="one-hero" class="bg-body-extra-light">
+          <div class="content content-full">
+            <div class="row g-0 justify-content-center text-center">
+              <div class="col-md-10 pt-7 pb-5">
+                <div class="d-inline-flex align-items-center space-x-1 fs-sm badge bg-success-light text-success mb-2 p-2">
+                  <i class="fa fa-fw fa-award"></i>
+                  <span>Best seller dashboard template</span>
+                </div>
+                <h1 class="fs-2 fw-bold mb-3">
+                  Build web apps that your users will love using
+                </h1>
+                <p class="fs-5 fw-medium text-muted mb-4 mx-xl-8">
+                  One super flexible UI framework for amazing developers and web agencies. Now based on <span class="text-body-color fw-semibold">Bootstrap 5</span>, with <span class="text-body-color fw-semibold">no jQuery</span> in core and an amazing brand new <span class="text-body-color fw-semibold">dark mode</span>.
+                </p>
+                <a class="btn btn-primary py-2 px-3 m-1" data-toggle="click-ripple" href="be_pages_dashboard.html" target="_blank">
+                  <i class="fa fa-fw fa-desktop opacity-50 me-1"></i> Live preview
+                </a>
+                <a class="btn btn-alt-primary py-2 px-3 m-1" data-toggle="click-ripple" href="#one-vue-edition">
+                  <i class="fa fa-fw fa-arrow-down opacity-50 me-1"></i> Learn more
+                </a>
+              </div>
+            </div>
+            <div class="px-lg-8 pull-b text-center">
+              <img class="img-fluid" src="assets/media/various/hero-promo.png" alt="Hero Promo">
+            </div>
+          </div>
+        </div>
+        <!-- END Hero -->
 
-        <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metismenu.min.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/simplebar.min.js"></script>
+        <!-- Hero After -->
+        <div id="one-hero-after" class="bg-body-light">
+          <div class="content">
+            <div class="row py-5">
+              <div class="col-6 col-md-3">
+                <div class="item item-rounded my-4 text-amethyst bg-amethyst-lighter">
+                  <i class="fab fa-fw fa-2x fa-bootstrap"></i>
+                </div>
+                <h4 class="mb-2">Bootstrap 5</h4>
+                <p class="text-muted">
+                  The latest and greatest framework version under the hood.
+                </p>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="item item-rounded my-4 text-flat bg-flat-lighter">
+                  <i class="fab fa-fw fa-2x fa-js"></i>
+                </div>
+                <h4 class="mb-2">ECMAScript 6</h4>
+                <p class="text-muted">
+                  Pure JavaScript code powers the custom JS functionality.
+                </p>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="item item-rounded my-4 text-smooth bg-smooth-lighter">
+                  <i class="fab fa-fw fa-2x fa-sass"></i>
+                </div>
+                <h4 class="mb-2">Sass</h4>
+                <p class="text-muted">
+                  Modular and extendable styles for total control over your designs.
+                </p>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="item item-rounded my-4 text-city bg-city-lighter">
+                  <i class="fab fa-fw fa-2x fa-laravel"></i>
+                </div>
+                <h4 class="mb-2">Laravel 9</h4>
+                <p class="text-muted">
+                  Power your apps with the latest Laravel using the included kit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Hero After -->
 
+        <!-- Vue Edition -->
+        <div id="one-vue-edition" class="bg-body-extra-light">
+          <div class="content content-full">
+            <div class="row py-5">
+              <div class="order-md-1 col-md-5 d-flex align-items-center justify-content-center py-5">
+                <svg class="w-50" viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)"><g transform="translate(178.06 235.01)"><path d="m0 0-22.669-39.264-22.669 39.264h-75.491l98.16-170.02 98.16 170.02z" fill="#41b883"/></g><g transform="translate(178.06 235.01)"><path d="m0 0-22.669-39.264-22.669 39.264h-36.227l58.896-102.01 58.896 102.01z" fill="#34495e"/></g></g></svg>
+              </div>
+              <div class="order-md-0 col-md-7 d-flex align-items-center">
+                <div>
+                  <h2 class="h1 fw-bold mb-2">
+                    OneUI <span class="fw-normal">Vue Edition</span>
+                  </h2>
+                  <p class="fs-lg fw-medium text-muted mb-4">
+                    A separately sold pure Vue.js 3 version of OneUI, built with Vite, Vue Router and Pinia, is now included in the package for free!
+                  </p>
+                  <a class="btn btn-alt-primary m-1" data-toggle="click-ripple" href="https://1.envato.market/5Noyb">
+                    Check it out
+                    <i class="fa fa-fw fa-arrow-right fs-base opacity-50 ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Vue Edition -->
 
-        <!-- Sparkline Js-->
-        <script src="../plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <!-- Versions -->
+        <div id="one-versions" class="bg-body-light">
+          <div class="content content-full">
+            <div class="py-5">
+              <div class="row mb-5">
+                <div class="col-md-6">
+                  <h2 class="h1 fw-bold mb-2">
+                    OneUI <span class="fw-normal">Versions</span>
+                  </h2>
+                  <p class="fs-lg fw-medium text-muted mb-0">
+                    Inside the package you will find an HTML version, a PHP version and a Laravel Starter Kit.
+                  </p>
+                </div>
+                <div class="col-md-6 d-none d-md-flex align-items-md-center justify-content-md-end">
+                  <p class="h1 fw-bold text-body-bg-dark mb-0">
+                    Solid Foundation.
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6 col-xl-4 py-3">
+                  <!-- HTML Version -->
+                  <div class="py-4">
+                    <i class="fab fa-4x fa-html5 text-city"></i>
+                  </div>
+                  <h4 class="mb-2">HTML Version</h4>
+                  <p class="text-muted">
+                    The abstract HTML version. This version can be used with any server side language/framework you prefer or currently working with.
+                  </p>
+                  <!-- END HTML Version -->
+                </div>
+                <div class="col-sm-6 col-xl-4 py-3">
+                  <!-- PHP Version -->
+                  <div class="py-4">
+                    <i class="fab fa-4x fa-php text-amethyst"></i>
+                  </div>
+                  <h4 class="mb-2">PHP Version</h4>
+                  <p class="text-muted">
+                    The abstract PHP version. This version can come really handy as a starting point if you would like to build a custom PHP application.
+                  </p>
+                  <!-- END PHP Version -->
+                </div>
+                <div class="col-sm-6 col-xl-4 py-3">
+                  <!-- Laravel Starter Kit -->
+                  <div class="py-4">
+                    <i class="fab fa-4x fa-laravel text-city"></i>
+                  </div>
+                  <h4 class="mb-2">Laravel 9 Starter Kit</h4>
+                  <p class="text-muted">
+                    It features a clean Laravel installation with all OneUI assets ready to work with Laravel Vite and a few example pages to get you started.
+                  </p>
+                  <!-- END Laravel Starter Kit -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Versions -->
 
-        <!-- Chart Js-->
-        <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- Features -->
+        <div id="one-features" class="bg-body-extra-light">
+          <div class="content content-full">
+            <div class="py-5">
+              <div class="row mb-5">
+                <div class="col-md-6">
+                  <h2 class="h1 fw-bold mb-2">
+                    OneUI <span class="fw-normal">Features</span>
+                  </h2>
+                  <p class="fs-lg fw-medium text-muted mb-0">
+                    Build user friendly and modern dashboards using the latest tech. Now is the time with a best selling UI framework.
+                  </p>
+                </div>
+                <div class="col-md-6 d-none d-md-flex align-items-md-center justify-content-md-end">
+                  <p class="h1 fw-bold text-body-bg-dark mb-0">
+                    Carefully Crafted.
+                  </p>
+                </div>
+              </div>
+              <div class="row items-push">
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Bootstrap 5 -->
+                  <div class="item item-rounded bg-amethyst-lighter my-4">
+                    <i class="fa fa-2x fa-fire text-amethyst"></i>
+                  </div>
+                  <h4 class="mb-2">Bootstrap 5</h4>
+                  <p class="text-muted">
+                    The latest Bootstrap version now powers OneUI framework. Amazing new features and utilities are ready for you to use.
+                  </p>
+                  <!-- END Bootstrap 5 -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Sass -->
+                  <div class="item item-rounded bg-smooth-lighter my-4">
+                    <i class="fab fa-2x fa-sass text-smooth"></i>
+                  </div>
+                  <h4 class="mb-2">Sass</h4>
+                  <p class="text-muted">
+                    OneUI was built with Sass, overriding and extending Bootstrap in an intelligent way to ensure a perfect and modular workflow.
+                  </p>
+                  <!-- END Sass -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- ES6 -->
+                  <div class="item item-rounded bg-flat-lighter my-4">
+                    <span class="fw-bold text-flat">ES6</span>
+                  </div>
+                  <h4 class="mb-2">ECMAScript 6</h4>
+                  <p class="text-muted">
+                    OneUI was built with ES6, the new major JavaScript release which enables us writing cleaner and better code. No jQuery in core.
+                  </p>
+                  <!-- END ES6 -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Font Awesome 6 -->
+                  <div class="item item-rounded bg-warning-light my-4">
+                    <i class="fab fa-2x fa-font-awesome text-warning"></i>
+                  </div>
+                  <h4 class="mb-2">Font Awesome 6</h4>
+                  <p class="text-muted">
+                    OneUI comes packed with one of the most popular icon sets, bringing you over 2000 freshly made icons for your projects.
+                  </p>
+                  <!-- END Font Awesome 6 -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Gulp -->
+                  <div class="item item-rounded bg-city-lighter my-4">
+                    <i class="fab fa-2x fa-gulp text-city"></i>
+                  </div>
+                  <h4 class="mb-2">Gulp 4</h4>
+                  <p class="text-muted">
+                    We created smart development tasks to help you focus on your projects. Just install the npm dependencies and use them out of the box.
+                  </p>
+                  <!-- END Gulp -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- webpack -->
+                  <div class="item item-rounded bg-default-lighter my-4">
+                    <i class="fa fa-2x fa-boxes text-default"></i>
+                  </div>
+                  <h4 class="mb-2">webpack + Babel</h4>
+                  <p class="text-muted">
+                    Babel makes your JavaScript code compatible with older browsers and webpack bundles your JavaScript files together.
+                  </p>
+                  <!-- END webpack -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Browsersync -->
+                  <div class="item item-rounded bg-modern-lighter my-4">
+                    <i class="fab fa-2x fa-chrome text-modern"></i>
+                  </div>
+                  <h4 class="mb-2">Browsersync</h4>
+                  <p class="text-muted">
+                    It will serve and sync your project across different browsers and also refresh them each time your save your files.
+                  </p>
+                  <!-- END Browsersync -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Autoprefixer -->
+                  <div class="item item-rounded bg-smooth-lighter my-4">
+                    <i class="fab fa-2x fa-autoprefixer text-smooth"></i>
+                  </div>
+                  <h4 class="mb-2">Autoprefixer</h4>
+                  <p class="text-muted">
+                    Peace of mind when working with Sass. Use the latest CSS syntax and Autoprefixer will auto add any required prefixes for older browsers.
+                  </p>
+                  <!-- END Autoprefixer -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Modular Approach -->
+                  <div class="item item-rounded bg-success-light my-4">
+                    <i class="fa fa-2x fa-truck-loading text-success"></i>
+                  </div>
+                  <h4 class="mb-2">Modular Approach</h4>
+                  <p class="text-muted">
+                    You can add your JavaScript or Sass overrides/customizations without altering the original files, making the update process an easy one.
+                  </p>
+                  <!-- END Modular Approach -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- Improved Design -->
+                  <div class="item item-rounded bg-info-light my-4">
+                    <i class="fa fa-2x fa-brush text-info"></i>
+                  </div>
+                  <h4 class="mb-2">Improved Design</h4>
+                  <p class="text-muted">
+                    Small touches and improvements were introduced throughout the template. From colors to layout and from custom elements to plugins.
+                  </p>
+                  <!-- END Improved Design -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- New Features -->
+                  <div class="item item-rounded bg-body my-4">
+                    <i class="fa fa-2x fa-moon text-dark"></i>
+                  </div>
+                  <h4 class="mb-2">Dark Mode</h4>
+                  <p class="text-muted">
+                    It is finally here and looks amazing! Carefully integrated and made to work with all color themes and included pages. You will love it!
+                  </p>
+                  <!-- END New Features -->
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                  <!-- New Features -->
+                  <div class="item item-rounded bg-warning-light my-4">
+                    <i class="fa fa-2x fa-star text-warning"></i>
+                  </div>
+                  <h4 class="mb-2">Free Update</h4>
+                  <p class="text-muted">
+                    We love our customers, so we are giving the 5.x version away as a free update to all existing ones! Thank you all for your support!
+                  </p>
+                  <!-- END New Features -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Features -->
 
-        <!-- Chart Custom Js-->
-        <script src="assets/pages/knob-chart-demo.js"></script>
+        <!-- Reviews -->
+        <div id="one-reviews" class="bg-body-light">
+          <div class="content content-full">
+            <div class="py-5">
+              <div class="row mb-5">
+                <div class="col-md-6">
+                  <h2 class="h1 fw-bold mb-2">
+                    Real Customer <span class="fw-normal">Reviews</span>
+                  </h2>
+                  <p class="fs-lg fw-medium text-muted mb-0">
+                    Check out what web developers and people in tech have written about OneUI.
+                  </p>
+                </div>
+                <div class="col-md-6 d-none d-md-flex align-items-md-center justify-content-md-end">
+                  <p class="h1 fw-bold text-body-bg-dark mb-0">
+                    Truly Loved.
+                  </p>
+                </div>
+              </div>
+              <div class="row items-push">
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    A combination of flexibility and ease of use. The design is beautiful, but I really value the ease in which I was able to integrate this into my development workflow and platform.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Other by <span class="fw-semibold">appeality</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    While reading the docs i can feel that you literally gave your heart to create this project. It is a high quality piece of work, thanks for sharing it!
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Code Quality by <span class="fw-semibold">msagi</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    This is my first purchase on Themeforest and I am delighted. Everything from the design to the code is beautifully crafted and the customer support is great also. Congratulations pixelcave.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Customizability by <span class="fw-semibold">CaravelaThemes</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row items-push">
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    One of the most well thought-through and comprehensive Themeforest templates available. Consistently excellent design and broad feature base. Highly Recommended!
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Feature Availability by <span class="fw-semibold">stephenhird</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    One of the best paid for downloads I have ever made. Has so many features which have all been designed and put together absolutely brilliantly.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Design Quality by <span class="fw-semibold">weblid</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    This is hands down the best template I have ever come across. It has absolutely everything you need right there laid out and easy to find. I couldn't recommend this template enough!
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Feature Availability by <span class="fw-semibold">dhowa021</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row items-push">
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    After using this Admin template for 6 months...we are still delighted. This template has everything. It has obviously been designed with much care and detail. Very intuitive, Easy to use. And we're still finding functionality that we hadn't discovered before. Well done to the developer and thanks for putting your heart-and-soul into this template.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Other by <span class="fw-semibold">conorhannah</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    This is the best UI I have ever came across, this UI theme is absolutely perfect in Every Way :) Really happy with the purchase.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Other by <span class="fw-semibold">spmtumblr</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    I have spent two days researching admin themes. There are a couple of really good ones out there, but this one came out at the very top for me. Looks great, on both desktop and mobile, the feature set is amazing, the documentation looks very good. I haven't started implementing yet, but this deserves five stars already.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Design Quality by <span class="fw-semibold">dvartok</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row items-push">
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    This is one of the best all-around packages I've purchased from ThemeForest. Not only is the Documentation is excellent and well-written, but the code itself is intelligently built and a pleasure to work with. Thanks for doing such great work.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Other by <span class="fw-semibold">rshaffaf</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    The best admin template ever, no doubt of it!!
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Other by <span class="fw-semibold">kaladrian</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Easily the best admin template you can find.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Code Quality by <span class="fw-semibold">nozebra_dk</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row items-push">
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Everything's perfect! Good design! Best performance I've ever use! And the best thing, fastest support I've seen! 5 star satisfaction!
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Customer Support by <span class="fw-semibold">arkheacol04</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    This is an amazing, multi purpose, and very well designed and structured template. I rarely write a review but this template deserves the support. It is distinguished.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Design Quality by <span class="fw-semibold">maa83</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Long story short: I really enjoy using the templates made by pixelcave. The code is very flexible and well structured, the documentation is very good - everything you need.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Code Quality by <span class="fw-semibold">Master_rg</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row items-push">
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    It's awesome, not only the design is marvelous, the code and documentation helps easy customization.
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Design Quality by <span class="fw-semibold">alperaydyn2</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Awesome !!! Thanks for a so great template !!
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Feature Availability by <span class="fw-semibold">Markuitos</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-inline-block px-2 py-1 rounded-3 bg-primary-lighter text-primary mb-2">
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                    <i class="fa fa-fw fa-star"></i>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Awesome code, works really well, well documented!
+                  </p>
+                  <p class="fs-sm fw-medium">
+                    For Flexibility by <span class="fw-semibold">corverdevelopment</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Reviews -->
 
+        <!-- Call To Action -->
+        <div id="one-call-to-action" class="bg-body-extra-light">
+          <div class="content content-full">
+            <div class="py-5 py-md-8 text-center">
+              <h2 class="fw-bold mb-2">
+                Crafted with <i class="fa fa-fw fa-heart text-city"></i> by <a class="link-fx" href="https://1.envato.market/ydb">pixelcave</a>
+              </h2>
+              <p class="fs-lg fw-medium text-muted mb-4">
+                Passionate web design and development with over 15,000 customers worldwide.
+              </p>
+              <a class="btn btn-success py-2 px-3 m-1" data-toggle="click-ripple" href="https://1.envato.market/AVD6j">
+                <i class="fa fa-fw fa-shopping-cart opacity-50 me-1"></i> Purchase
+              </a>
+              <a class="btn btn-primary py-2 px-3 m-1" data-toggle="click-ripple" href="be_pages_dashboard.html" target="_blank">
+                <i class="fa fa-fw fa-desktop opacity-50 me-1"></i> Live Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- END Call To Action -->
 
-        <!-- Morris Js-->
-        <script src="../plugins/morris-js/morris.min.js"></script>
+        <!-- Footer -->
+        <footer id="page-footer" class="bg-body-light">
+          <div class="content py-5">
+            <div class="row fs-sm fw-medium">
+              <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end">
+                Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+              </div>
+              <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
+                <a class="fw-semibold" href="https://1.envato.market/AVD6j" target="_blank">OneUI 5.5</a> &copy; <span data-toggle="year-copy"></span>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- END Footer -->
+      </main>
+      <!-- END Main Container -->
+    </div>
+    <!-- END Page Container -->
 
-        <!-- Raphael Js-->
-        <script src="../plugins/raphael/raphael.min.js"></script>
+    <!--
+        OneUI JS
 
-        <!-- Custom Js -->
-        <script src="assets/pages/dashboard-demo.js"></script>
-
-        <!-- App js -->
-        <script src="assets/js/theme.js"></script>
-
-    </body>
-
+        Core libraries and functionality
+        webpack is putting everything together at assets/_js/main/app.js
+    -->
+    <script src="assets/js/oneui.app.min.js"></script>
+  </body>
 </html>

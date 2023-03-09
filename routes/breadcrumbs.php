@@ -14,214 +14,31 @@ Breadcrumbs::for('administrator.index', function (BreadcrumbTrail $trail) {
     $trail->push('Dashboard', route('administrator.index'));
 });
 
-// // =======================HALAMAN ADMIN USERS========================//
-// User
+// // =======================HALAMAN ADMINISTRATOR APP========================//
+// Pengguna APP
 Breadcrumbs::for('pengguna_app.index', function (BreadcrumbTrail $trail) {
-    $trail->parent('admin');
-    $trail->push('Pengguna', route('users.index'));
+    $trail->parent('administrator.index');
+    $trail->push('Pengguna', route('pengguna_app.index'));
 });
-// // User > create
-// Breadcrumbs::for('users.create', function (BreadcrumbTrail $trail) {
-//     $trail->parent('users.index');
-//     $trail->push('Tambah', route('users.create'));
-// });
-// // User > edit
-// Breadcrumbs::for('users.edit', function (BreadcrumbTrail $trail, User $user): void {
-//     $trail->parent('users.index');
-//     $trail->push('Edit', route('users.edit', $user));
-// });
-// // User > show
-// Breadcrumbs::for('users.show', function (BreadcrumbTrail $trail, User $user): void {
-//     $trail->parent('users.index');
-//     $trail->push('Show', route('users.show', $user));
-// });
-// // =======================END HALAMAN ADMIN USERS========================//
+Breadcrumbs::for('pengguna_app.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('administrator.index');
+    $trail->push('Pengguna', route('pengguna_app.index'));
+    $trail->push('Tambah', route('pengguna_app.create'));
+});
+Breadcrumbs::for('pengguna_app.edit', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('administrator.index');
+    $trail->push('Pengguna', route('pengguna_app.index'));
+    $trail->push('Edit', route('pengguna_app.edit', $id));
+});
 
-
-// // Bidang Temuan
-// Breadcrumbs::for('bidangtemuan.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('bidangtemuan.index'));
-// });
-// // Kode Temuan
-// Breadcrumbs::for('kodetemuan.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('kodetemuan.index'));
-// });
-// // Kode Rekomendasi
-// Breadcrumbs::for('koderekomendasi.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('koderekomendasi.index'));
-// });
-// // Kode Penyebab
-// Breadcrumbs::for('kodepenyebab.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('kodepenyebab.index'));
-// });
-// // Kode Tlhp
-// Breadcrumbs::for('kodetlhp.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('kodetlhp.index'));
-// });
-// // Klarifikasi Obrik
-// Breadcrumbs::for('klarifikasiobrik.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('klarifikasiobrik.index'));
-// });
-// // Pendaftran Obrik
-// Breadcrumbs::for('pendaftaranobrik.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('pendaftaranobrik.index'));
-// });
-// // Tambah Pendaftran Obrik
-// Breadcrumbs::for('pendaftaranobrik.create', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Tambah Data', route('pendaftaranobrik.create'));
-// });
-// // Edit Pendaftran Obrik
-// Breadcrumbs::for('pendaftaranobrik.edit', function (BreadcrumbTrail $trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Edit Data', route('pendaftaranobrik.edit', $id));
-// });
-// // Jenis Pemeriksaan
-// Breadcrumbs::for('jenispemeriksaan.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Data', route('jenispemeriksaan.index'));
-// });
-// // LHP
-// Breadcrumbs::for('lhp.index', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('LHP', route('lhp.index'));
-// });
-// // LHP Create
-// Breadcrumbs::for('lhp.create', function (BreadcrumbTrail $trail) {
-//     $trail->parent('admin');
-//     $trail->push('Tambah Data', route('lhp.create'));
-// });
-// // LHP Edit
-// Breadcrumbs::for('lhp.edit', function (BreadcrumbTrail $trail, $id) {
-//     $trail->parent('lhp.index');
-//     $trail->push('Edit Data', route('lhp.edit', $id));
-// });
-// // LHP Show
-// Breadcrumbs::for('lhp.show', function (BreadcrumbTrail $trail, $id) {
-//     $trail->parent('lhp.index');
-//     $trail->push('Detail Data', route('lhp.show', $id));
-// });
-
-// // Tambah Temuan
-// Breadcrumbs::for('temuan.create', function (BreadcrumbTrail $trail, $id) {
-//     $trail->parent('lhp.index');
-//     $trail->push('Tambah Temuan', route('temuan.create', $id));
-// });
-// // Edit Temuan
-// Breadcrumbs::for('temuan.edit', function (BreadcrumbTrail $trail, $id) {
-//     $trail->parent('lhp.index');
-//     $trail->push('Edit Temuan', route('temuan.edit', $id));
-// });
-// // Temuan Show
-// Breadcrumbs::for('temuan.show', function (BreadcrumbTrail $trail, $id) {
-//     $trail->parent('lhp.index');
-//     $trail->push('Detail Temuan', route('temuan.show', $id));
-// });
-// //Penyebab
-// Breadcrumbs::for('penyebab.index', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Penyebab', route('penyebab.index', $id));
-// });
-// // Tambah Penyebab
-// Breadcrumbs::for('penyebab.create', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Tambah Penyebab', route('penyebab.create', $id));
-// });
-// // Penyebab Show
-// Breadcrumbs::for('penyebab.show', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Detail Penyebab', route('penyebab.show', $id));
-// });
-// // Penyebab Edit
-// Breadcrumbs::for('penyebab.edit', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Edit Penyebab', route('penyebab.edit', $id));
-// });
-// // Rekomendasi Index
-// Breadcrumbs::for('rekomendasi.index', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Data Rekomendasi', route('rekomendasi.index', $id));
-// });
-// // Rekomendasi Create
-// Breadcrumbs::for('rekomendasi.create', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Tambah Rekomendasi', route('rekomendasi.create', $id));
-// });
-// // Rekomendasi Show
-// Breadcrumbs::for('rekomendasi.show', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Detail Rekomendasi', route('rekomendasi.show', $id));
-// });
-// // Rekomendasi Edit
-// Breadcrumbs::for('rekomendasi.edit', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Edit Rekomendasi', route('rekomendasi.edit', $id));
-// });
-// // Tindak Lanjut Index
-// Breadcrumbs::for('tindaklanjut.index', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Data Tindak Lanjut', route('tindaklanjut.index', $id));
-// });
-// // Tindak Lanjut Show
-// Breadcrumbs::for('tindaklanjut.show', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Detail Tindak Lanjut', route('tindaklanjut.show', $id));
-// });
-// // Tindak Lanjut Edit
-// Breadcrumbs::for('tindaklanjut.edit', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Edit Tindak Lanjut', route('tindaklanjut.edit', $id));
-// });
-// // Penarikan RND Index
-// Breadcrumbs::for('penarikanrnd.index', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Data Penarikan RND', route('penarikanrnd.index', $id));
-// });
-// // Penarikan RND Create
-// Breadcrumbs::for('penarikanrnd.create', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Tambah Penarikan RND', route('penarikanrnd.create', $id));
-// });
-// // Penarikan RND Edit
-// Breadcrumbs::for('penarikanrnd.edit', function ($trail, $id) {
-//     $trail->parent('admin');
-//     $trail->push('Lhp', route('lhp.index'));
-//     $trail->push('Temuan', route('temuan.show', $id));
-//     $trail->push('Edit Penarikan RND', route('penarikanrnd.edit', $id));
-// });
-
-
-// =======================END HALAMAN ADMIN========================//
+// Setting APP
+Breadcrumbs::for('setting_app.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('administrator.index');
+    $trail->push('Pengaturan', route('setting_app.index'));
+});
+Breadcrumbs::for('setting_app.edit', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('administrator.index');
+    $trail->push('Pengaturan', route('setting_app.index'));
+    $trail->push('Edit', route('setting_app.edit', $id));
+});
+// =======================END HALAMAN ADMINISTRATOR APP========================//

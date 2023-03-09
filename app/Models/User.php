@@ -27,7 +27,7 @@ class User extends Authenticatable
 
 
 
-    function delete_image()
+    function delete_image_pengguna()
     {
         if ($this->image && file_exists(public_path('images/pengguna/' . $this->image)))
             unlink(public_path('images/pengguna/' . $this->image));

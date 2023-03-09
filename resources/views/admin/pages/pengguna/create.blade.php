@@ -1,4 +1,10 @@
 @extends('admin.layouts.master')
+@section('title')
+    Tambah Pengguna
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render() }}
+@endsection
 @section('content')
     <div class="row">
         <div class="col-xl-12">

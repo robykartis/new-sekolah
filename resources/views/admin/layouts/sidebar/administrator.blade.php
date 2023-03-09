@@ -1,46 +1,51 @@
-<div class="vertical-menu">
+<div class="js-sidebar-scroll">
+    <!-- Side Navigation -->
+    <div class="content-side">
+        <ul class="nav-main">
+            <li class="nav-main-item">
+                <a class="nav-main-link active" href="be_pages_dashboard.html">
+                    <i class="nav-main-link-icon si si-speedometer"></i>
+                    <span class="nav-main-link-name">Dashboarddd</span>
+                </a>
+            </li>
 
-    <div data-simplebar class="h-100">
+            <li class="nav-main-heading">User Interface</li>
+            <li class="nav-main-item">
+                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
+                    aria-expanded="false" href="#">
+                    <i class="nav-main-link-icon si si-energy"></i>
+                    <span class="nav-main-link-name">Blocks</span>
+                </a>
+                <ul class="nav-main-submenu">
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="be_blocks_styles.html">
+                            <span class="nav-main-link-name">Styles</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="be_blocks_options.html">
+                            <span class="nav-main-link-name">Options</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="be_blocks_forms.html">
+                            <span class="nav-main-link-name">Forms</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="be_blocks_themed.html">
+                            <span class="nav-main-link-name">Themed</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="be_blocks_api.html">
+                            <span class="nav-main-link-name">API</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-        <div class="navbar-brand-box">
-            <a href="index.html" class="logo">
-                <i class="mdi mdi-album"></i>
-                <span>
-                    Xeloro
-                </span>
-            </a>
-        </div>
-
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-            <!-- Left Menu Start -->
-            <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Menu</li>
-
-                <li>
-                    <a href="{{ route('administrator.index') }}"
-                        class="waves-effect {{ set_active(['administrator.index']) }}">
-                        <i class="mdi mdi-home-analytics"></i><span>Dashboard</span></a>
-                </li>
-                <li>
-                    <a href="{{ route('pengguna_app.index') }}"
-                        class="waves-effect {{ set_active(['pengguna_app.index']) }}">
-                        <i class="mdi mdi-account-group"></i><span>Pengguna App</span></a>
-                </li>
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                            class="mdi mdi-table-merge-cells"></i><span>Tables</span></a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="tables-basic.html">Basic Tables</a></li>
-                        <li><a href="tables-datatables.html">Data Tables</a></li>
-                    </ul>
-                </li>
-
-                <li class="menu-title">Menu</li>
-
-            </ul>
-        </div>
-        <!-- Sidebar -->
+        </ul>
     </div>
+    <!-- END Side Navigation -->
 </div>

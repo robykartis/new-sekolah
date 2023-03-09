@@ -191,7 +191,7 @@ class PenggunaController extends Controller
         try {
             $user = User::findOrFail($id);
             if ($request->hasFile('foto')) {
-                $user->delete_image();
+                $user->delete_image_pengguna();
                 $image = $request->file('foto');
                 $file_name = rand(1000, 9999) . $image->getClientOriginalName();
                 $img = Image::make($image->path());
@@ -217,8 +217,12 @@ class PenggunaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete_image_pengguna();
+        $user->delete();
+        return redirect()->route('pengguna_app.index')
+            ->with('success', 'Data Pengguna Berhasil Dihapus');
     }
 }

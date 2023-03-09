@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PenggunaController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\StaffsekolahController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template');
 });
 
 
@@ -38,7 +39,7 @@ Route::middleware(['auth', 'administrator:admin'])->group(function () {
 
     Route::prefix('administrator')->group(function () {
         Route::get('/dashboard', [AdministratorController::class, 'index'])->name('administrator.index');
-
+        // Route Pengguna APP
         Route::prefix('pengguna-app')->group(function () {
             Route::controller(PenggunaController::class)->group(function () {
                 Route::get('/', 'index')->name('pengguna_app.index');
@@ -48,6 +49,14 @@ Route::middleware(['auth', 'administrator:admin'])->group(function () {
                 Route::get('/edit/{id}', 'edit')->name('pengguna_app.edit');
                 Route::put('/rubah/{id}', 'update')->name('pengguna_app.update');
                 Route::get('/hapus/{id}', 'destroy')->name('pengguna_app.destroy');
+            });
+        });
+        // Route Setting APP
+        Route::prefix('setting-app')->group(function () {
+            Route::controller(SettingController::class)->group(function () {
+                Route::get('/', 'index')->name('setting_app.index');
+                Route::get('/edit/{id}', 'edit')->name('setting_app.edit');
+                Route::put('/rubah/{id}', 'update')->name('setting_app.update');
             });
         });
     });

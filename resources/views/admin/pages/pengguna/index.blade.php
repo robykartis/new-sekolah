@@ -1,4 +1,10 @@
 @extends('admin.layouts.master')
+@section('title')
+    Pengguna
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render() }}
+@endsection
 @section('content')
     <div class="row">
         <div class="col-md-6 col-xl-3">
@@ -176,7 +182,12 @@
     <script src="{{ asset('template/admin/assets/pages/datatables-demo.js') }}"></script>
 
 
-
+    <script type="text/javascript">
+        function confirmDelete() {
+            if (!confirm("Are You Sure to delete this"))
+                event.preventDefault();
+        }
+    </script>
     <script type="text/javascript">
         $(function() {
             var table = $('.datatable').DataTable({
@@ -211,6 +222,26 @@
                         searchable: true
                     },
                 ]
+            });
+            var user_id;
+            $(document).on('click', '.delete', function() {
+                user_id = $(this).attr('id');
+                $('#confirmModal').modal('show');
+            });
+            $('#ok_button').click(function() {
+                $.ajax({
+                    url: "users/destroy/" + user_id,
+                    beforeSend: function() {
+                        $('#ok_button').text('Deleting...');
+                    },
+                    success: function(data) {
+                        setTimeout(function() {
+                            $('#confirmModal').modal('hide');
+                            $('#user_table').DataTable().ajax.reload();
+                            alert('Data Deleted');
+                        }, 2000);
+                    }
+                })
             });
         });
     </script>
