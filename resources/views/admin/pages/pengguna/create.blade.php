@@ -112,7 +112,11 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary waves-effect waves-light">Simpan</button>
+
+                        <div class="d-sm-flex align-items-center justify-content-between pt-3">
+                            <a href="{{ route('pengguna_app.index') }}" class="btn btn-warning">Kembali</a>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Simpan</button>
+                        </div>
                     </form>
                 </div>
                 <!-- end card-body-->

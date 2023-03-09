@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Yajra\DataTables\DataTables;
+use Yajra\DataTables\Facades\DataTables;
 use Intervention\Image\Facades\Image;
 
 class PenggunaController extends Controller
@@ -18,16 +18,19 @@ class PenggunaController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = User::select('id', 'name',  'role', 'email')->get();
+            $data = User::select('id', 'name', 'role', 'email', 'foto')->get();
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $btn = '<a href="' . route('pengguna_app.edit', $row->id) . '"class="btn btn-sm btn-info" data-bs-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-pencil-alt"></i></a> |';
-                    $btn = $btn . '<a href="' . route('pengguna_app.show', $row->id) . '"class="btn btn-sm btn-warning" data-bs-toggle="tooltip" title="Show"><i class="fa fa-fw fa-eye"></i></a> |';
-                    $btn = $btn . '<a href="' . route('pengguna_app.destroy', $row->id) . '" onclick="confirmDelete()"class="btn btn-sm btn-danger" data-bs-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-times"></i></a>';
+                    $btn = '<a href="' . route('pengguna_app.edit', $row->id) . '" class="btn btn-sm btn-info" data-bs-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-pencil-alt"></i></a> |';
+                    $btn .= '<a href="' . route('pengguna_app.show', $row->id) . '" class="btn btn-sm btn-warning" data-bs-toggle="tooltip" title="Show"><i class="fa fa-fw fa-eye"></i></a> |';
+                    $btn .= '<a href="' . route('pengguna_app.destroy', $row->id) . '" onclick="confirmDelete()" class="btn btn-sm btn-danger" data-bs-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-times"></i></a>';
                     return $btn;
                 })
-                ->rawColumns(['action'])
+                ->addColumn('foto', function ($row) {
+                    return '<img src="' . asset('images/pengguna/small/small_' . $row->foto) . '" alt="" width="50" height="50"/>';
+                })
+                ->rawColumns(['action', 'foto'])
                 ->make(true);
         }
         return view('admin.pages.pengguna.index');
@@ -172,13 +175,13 @@ class PenggunaController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $id,
             'role' => 'required',
-            'password' => 'required|string|confirmed|min:8',
-            'foto' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'password' => 'nullable|string|confirmed|min:8',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ], [
             'name.required' => 'Nama pengguna tidak boleh kosong',
             'email.required' => 'Email tidak boleh kosong',
             'role.required' => 'Pilih salah satu role akun pengguna',
-            'password.required' => 'Password harap tidak boleh kosong',
+            'password.nullable' => 'Password harap tidak boleh kosong',
         ]);
         if ($validator->fails()) {
             return redirect()->back()
@@ -195,7 +198,7 @@ class PenggunaController extends Controller
                 $img->resize('180', '120')
                     ->save(public_path('images/pengguna/small') . '/small_' . $file_name);
                 $image->move('images/pengguna', $file_name);
-                $user->image = $file_name;
+                $user->foto = $file_name;
             }
             $user->name = $request->name;
             $user->email = $request->email;

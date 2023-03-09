@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
     <div class="row">
-        <div class="col-xl-10">
+        <div class="col-xl-9">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ $judul }} </h4>
@@ -114,21 +114,21 @@
                         </div>
                         <div class="d-sm-flex align-items-center justify-content-between pt-3">
                             <a href="{{ route('pengguna_app.index') }}" class="btn btn-warning">Kembali</a>
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Simpan</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Rubah</button>
                         </div>
                     </form>
                 </div>
                 <!-- end card-body-->
             </div>
         </div>
-        <div class="col-xl-2">
+        <div class="col-xl-3">
             <div class="card">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Foto Pengguna</h4>
                         <div class="row">
-                            <div class="col-sm-6">
-                                <img src="{{ asset('images/pengguna/', $data->foto) }}" alt="Foto {{ $data->name }}"
+                            <div class="col-sm-12">
+                                <img src="{{ asset('images/pengguna/' . $data->foto) }}" alt="Foto {{ $data->name }}"
                                     class="img-fluid rounded" width="200" />
 
                             </div>

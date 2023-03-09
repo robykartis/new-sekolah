@@ -25,7 +25,7 @@
                 <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <img class="rounded-circle header-profile-user"
-                        src="{{ asset('template/admin/assets/images/users/avatar-2.jpg') }}" alt="Header Avatar">
+                        src="{{ asset('images/pengguna/small/small_' . Auth::user()->foto) }}" alt="Header Avatar">
                     <span class="d-none d-sm-inline-block ml-1">{{ Auth::user()->name }}</span>
                     <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                 </button>

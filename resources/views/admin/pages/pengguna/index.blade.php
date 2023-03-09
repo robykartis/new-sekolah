@@ -138,6 +138,7 @@
                                 <th>Nama</th>
                                 <th>Email</th>
                                 <th>Role</th>
+                                <th>Foto</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -177,9 +178,7 @@
 
 
     <script type="text/javascript">
-        // $('.dt-responsive').DataTable().destroy();
         $(function() {
-
             var table = $('.datatable').DataTable({
                 responsive: true,
                 processing: true,
@@ -202,6 +201,10 @@
                         name: 'role'
                     },
                     {
+                        data: 'foto',
+                        name: 'foto',
+                    },
+                    {
                         data: 'action',
                         name: 'action',
                         orderable: true,
@@ -209,7 +212,6 @@
                     },
                 ]
             });
-
         });
     </script>
 @endpush
