@@ -6,92 +6,113 @@
     {{ Breadcrumbs::render() }}
 @endsection
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="text-center mt-4">
-                @foreach ($data as $title)
-                    <h4>{{ $title->name }} </h4>
-                    <p class="text-muted mt-3 mb-4">
-                        {{ $title->address }}
-                    </p>
-                @endforeach
+    <div class="content content-boxed">
+        <div class="row">
+            <div class="col-md-7 col-xl-8">
+                <!-- Updates -->
+                @foreach ($data as $item)
+                    <ul class="timeline timeline-alt py-0">
+                        <li class="timeline-event">
+                            <div class="timeline-event-icon bg-default">
+                                <i class="fa fa-circle-check"></i>
+                            </div>
+                            <div class="timeline-event-block block">
+                                <div class="block-header">
+                                    <h3 class="block-title">Name</h3>
 
-            </div>
-        </div><!-- end col -->
-    </div><!-- end row -->
-
-
-    <div class="row mt-5">
-        <div class="col-lg-8">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="mb-3 font-weight-bold text-uppercase">INFO</h5>
-                    <div id="accordion">
-                        @foreach ($data as $item)
-                            <div class="card mb-1">
-                                <div class="card-header bg-white border-bottom-0 p-3" id="headingOne">
-                                    <h5 class="m-0 font-size-16">
-                                        Name
-                                    </h5>
                                 </div>
-                                <div>
-                                    <div class="card-body text-muted pt-0">
+                                <div class="block-content">
+                                    <p class="fw-semibold mb-2">
                                         {{ $item->name }}
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
-                            <div class="card mb-1">
-                                <div class="card-header bg-white border-bottom-0 p-3" id="headingOne">
-                                    <h5 class="m-0 font-size-16">
-                                        Address
-                                    </h5>
+                        </li>
+                        <li class="timeline-event">
+                            <div class="timeline-event-icon bg-modern">
+                                <i class="fa fa-house-circle-check"></i>
+                            </div>
+                            <div class="timeline-event-block block">
+                                <div class="block-header">
+                                    <h3 class="block-title">Address</h3>
+
                                 </div>
-                                <div>
-                                    <div class="card-body text-muted pt-0">
+                                <div class="block-content">
+                                    <p class="fw-semibold mb-2">
                                         {{ $item->address }}
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
-                            <div class="card mb-1">
-                                <div class="card-header bg-white border-bottom-0 p-3" id="headingOne">
-                                    <h5 class="m-0 font-size-16">
-                                        Email
-                                    </h5>
+                        </li>
+                        <li class="timeline-event">
+                            <div class="timeline-event-icon bg-info">
+                                <i class="fa fa-envelope-open-text"></i>
+                            </div>
+                            <div class="timeline-event-block block">
+                                <div class="block-header">
+                                    <h3 class="block-title">Email</h3>
                                 </div>
-                                <div>
-                                    <div class="card-body text-muted pt-0">
+                                <div class="block-content">
+                                    <p class="fw-semibold mb-2">
                                         {{ $item->email }}
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
-                            <div class="card mb-1">
-                                <div class="card-header bg-white border-bottom-0 p-3" id="headingOne">
-                                    <h5 class="m-0 font-size-16">
-                                        Telpon
-                                    </h5>
+                        </li>
+                        <li class="timeline-event">
+                            <div class="timeline-event-icon bg-smooth">
+                                <i class="fa fa-mobile-retro"></i>
+                            </div>
+                            <div class="timeline-event-block block">
+                                <div class="block-header">
+                                    <h3 class="block-title">Telpon</h3>
+
                                 </div>
-                                <div>
-                                    <div class="card-body text-muted pt-0">
+                                <div class="block-content">
+                                    <p class="fw-semibold mb-2">
                                         {{ $item->telpon }}
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
-                    </div>
+                        </li>
+                        <li class="timeline-event">
+                            <div class="timeline-event-icon bg-dark">
+                                <a href="{{ route('setting_app.edit', $item->id) }}" class="btn btn-success mb-2"><i
+                                        class="fa fa-cog"></i>Edit</a>
+                            </div>
 
-                </div>
-                <div class="card-footer">
-                    <a href="{{ route('setting_app.edit', $item->id) }}" class="btn btn-primary">Edit</a>
-                </div>
+                        </li>
+
+                    </ul>
                 @endforeach
+                <!-- END Updates -->
             </div>
+            <div class="col-md-5 col-xl-4">
+                <!-- Products -->
+                <div class="block block-rounded">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">
+                            <i class="fa fa-briefcase text-muted me-1"></i> Logo
+                        </h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option"
+                                data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        <div class="d-flex align-items-center justify-content-center push">
 
-        </div> <!-- end col -->
+                            <div class="block-content block-content-full text-center bg-image">
+                                <img class="img-fluid" src="{{ asset('images/app/' . $item->logo) }}" alt="logo">
+                            </div>
 
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="mt-0">Logo</h5>
+                        </div>
+
+                    </div>
                 </div>
+                <!-- END Products -->
             </div>
         </div>
     </div>

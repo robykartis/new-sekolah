@@ -17,7 +17,7 @@ if (!function_exists('set_active')) {
             }
         }
     }
-    function set_expand($uri, $output = 'submenu')
+    function set_open($uri, $output = 'open')
     {
         if (is_array('$uri')) {
             foreach ($uri as $u) {

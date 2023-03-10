@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\AdministratorController;
 use App\Http\Controllers\Admin\GurusekolahController;
+use App\Http\Controllers\Admin\JabatanPegawaiController;
 use App\Http\Controllers\Admin\KeplasekolahController;
 use App\Http\Controllers\Admin\OrangtuaController;
+use App\Http\Controllers\Admin\PegawaiController;
 use App\Http\Controllers\Admin\PenggunaController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\StaffsekolahController;
@@ -57,6 +59,20 @@ Route::middleware(['auth', 'administrator:admin'])->group(function () {
                 Route::get('/', 'index')->name('setting_app.index');
                 Route::get('/edit/{id}', 'edit')->name('setting_app.edit');
                 Route::put('/rubah/{id}', 'update')->name('setting_app.update');
+            });
+        });
+        // Route Jabatan Pegawai
+        Route::prefix('pegawai')->group(function () {
+            Route::resource('jabatan', JabatanPegawaiController::class);
+        });
+        // Route Pegawai
+        Route::prefix('pegawai')->group(function () {
+            Route::controller(PegawaiController::class)->group(function () {
+                Route::get('/', 'index')->name('pegawai.index');
+                Route::get('/edit/{id}', 'edit')->name('pegawai.edit');
+                Route::get('/detail/{id}', 'show')->name('pegawai.show');
+                Route::put('/rubah/{id}', 'update')->name('pegawai.update');
+                Route::put('/hapus/{id}', 'destroy')->name('pegawai.destroy');
             });
         });
     });

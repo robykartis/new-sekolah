@@ -41,4 +41,14 @@ Breadcrumbs::for('setting_app.edit', function (BreadcrumbTrail $trail, $id) {
     $trail->push('Pengaturan', route('setting_app.index'));
     $trail->push('Edit', route('setting_app.edit', $id));
 });
+// Jabatan Pegawai
+Breadcrumbs::for('jabatan.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('administrator.index');
+    $trail->push('Jabatan', route('jabatan.index'));
+});
+// Pegawai
+Breadcrumbs::for('pegawai.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('administrator.index');
+    $trail->push('Pegawai', route('pegawai.index'));
+});
 // =======================END HALAMAN ADMINISTRATOR APP========================//

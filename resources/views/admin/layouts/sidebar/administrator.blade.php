@@ -9,6 +9,7 @@
                     <span class="nav-main-link-name">Dashboarddd</span>
                 </a>
             </li>
+            <li class="nav-main-heading">Management APP</li>
             <li class="nav-main-item">
                 <a class="nav-main-link {{ set_active(['pengguna_app.index', 'pengguna_app.create']) }}"
                     href="{{ route('pengguna_app.index') }}">
@@ -16,42 +17,49 @@
                     <span class="nav-main-link-name">Pengguna APP</span>
                 </a>
             </li>
-
-            <li class="nav-main-heading">User Interface</li>
             <li class="nav-main-item">
+                <a class="nav-main-link {{ set_active(['setting_app.index', 'setting_app.edit']) }}"
+                    href="{{ route('setting_app.index') }}">
+                    <i class="nav-main-link-icon si si-settings"></i>
+                    <span class="nav-main-link-name">Stting APP</span>
+                </a>
+            </li>
+
+            <li class="nav-main-heading">Managgement Pegawai</li>
+
+            <li class="nav-main-item {{ set_open(['jabatan.index', 'jabatan.edit']) }}">
                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
                     aria-expanded="false" href="#">
-                    <i class="nav-main-link-icon si si-energy"></i>
-                    <span class="nav-main-link-name">Blocks</span>
+                    <i class="nav-main-link-icon si si-puzzle"></i>
+                    <span class="nav-main-link-name">Component Pegawai</span>
                 </a>
                 <ul class="nav-main-submenu">
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_blocks_styles.html">
-                            <span class="nav-main-link-name">Styles</span>
+                        <a class="nav-main-link {{ set_active(['jabatan.index', 'jabatan.edit']) }}"
+                            href="{{ route('jabatan.index') }}">
+                            <span class="nav-main-link-name">Jabatan</span>
                         </a>
                     </li>
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="be_blocks_options.html">
-                            <span class="nav-main-link-name">Options</span>
+                            <span class="nav-main-link-name">Status</span>
                         </a>
                     </li>
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="be_blocks_forms.html">
-                            <span class="nav-main-link-name">Forms</span>
+                            <span class="nav-main-link-name">Pendidikan</span>
                         </a>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_blocks_themed.html">
-                            <span class="nav-main-link-name">Themed</span>
-                        </a>
-                    </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_blocks_api.html">
-                            <span class="nav-main-link-name">API</span>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
+            <li class="nav-main-item">
+                <a class="nav-main-link {{ set_active(['pegawai.index']) }}" href="{{ route('pegawai.index') }}">
+                    <i class="nav-main-link-icon si si-user-following"></i>
+                    <span class="nav-main-link-name">Pegawai</span>
+                </a>
+            </li>
+
 
         </ul>
     </div>
