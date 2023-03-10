@@ -100,7 +100,7 @@ class PenggunaController extends Controller
             $file_name = rand(1000, 9999) . $image->getClientOriginalName();
 
             $img = Image::make($image->path());
-            $img->resize('180', '120')
+            $img->resize('760', '760')
                 ->save(public_path('images/pengguna/small') . '/small_' . $file_name);
             $image->move('images/pengguna', $file_name);
 
