@@ -32,7 +32,7 @@
     <!-- OneUI framework -->
     <link rel="stylesheet" id="css-main" href="{{ asset('template/admin/assets/css/oneui.min.css') }}">
 
-
+    @stack('css-page')
 </head>
 
 <body>
@@ -129,6 +129,7 @@
 
     <!-- Page JS Code -->
     <script src="{{ asset('template/admin/assets/js/pages/be_pages_dashboard.min.js') }}"></script>
+    @stack('js-page')
 </body>
 
 </html>

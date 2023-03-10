@@ -10,10 +10,10 @@
                 </a>
             </li>
             <li class="nav-main-item">
-                <a class="nav-main-link {{ set_active(['pengguna_app.index']) }}"
+                <a class="nav-main-link {{ set_active(['pengguna_app.index', 'pengguna_app.create']) }}"
                     href="{{ route('pengguna_app.index') }}">
                     <i class="nav-main-link-icon si si-users"></i>
-                    <span class="nav-main-link-name">Dashboarddd</span>
+                    <span class="nav-main-link-name">Pengguna APP</span>
                 </a>
             </li>
 

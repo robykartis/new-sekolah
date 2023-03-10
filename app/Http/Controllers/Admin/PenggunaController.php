@@ -28,7 +28,7 @@ class PenggunaController extends Controller
                     return $btn;
                 })
                 ->addColumn('foto', function ($row) {
-                    return '<img src="' . asset('images/pengguna/small/small_' . $row->foto) . '" alt="" width="50" height="50"/>';
+                    return '<img class="img-avatar" src="' . asset('images/pengguna/small/small_' . $row->foto) . '" alt="" width="50" height="50"/>';
                 })
                 ->rawColumns(['action', 'foto'])
                 ->make(true);

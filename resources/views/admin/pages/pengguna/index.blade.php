@@ -5,181 +5,75 @@
 @section('breadcrumbs')
     {{ Breadcrumbs::render() }}
 @endsection
+@push('css-page')
+    <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet"
+        href="{{ asset('template/admin/assets/js/plugins/datatables-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template/admin/assets/js/plugins/datatables-buttons-bs5/css/buttons.bootstrap5.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template/admin/assets/js/plugins/datatables-responsive-bs5/css/responsive.bootstrap5.min.css') }}">
+@endpush
 @section('content')
-    <div class="row">
-        <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">Daily</span>
-                        <h5 class="card-title mb-0">Cost per Unit</h5>
-                    </div>
-                    <div class="row d-flex align-items-center mb-4">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                $17.21
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span class="text-muted">12.5% <i class="mdi mdi-arrow-up text-success"></i></span>
-                        </div>
-                    </div>
+    <!-- Page Content -->
+    <div class="content">
 
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
-                        </div>
-                    </div>
-                </div>
-                <!--end card body-->
-            </div><!-- end card-->
-        </div> <!-- end col-->
-
-        <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">Per Week</span>
-                        <h5 class="card-title mb-0">Market Revenue</h5>
-                    </div>
-                    <div class="row d-flex align-items-center mb-4">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                $1875.54
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span class="text-muted">18.71% <i class="mdi mdi-arrow-down text-danger"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
-                        </div>
-                    </div>
-                </div>
-                <!--end card body-->
-            </div><!-- end card-->
-        </div> <!-- end col-->
-
-        <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">Per Month</span>
-                        <h5 class="card-title mb-0">Expenses</h5>
-                    </div>
-                    <div class="row d-flex align-items-center mb-4">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                $784.62
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span class="text-muted">57% <i class="mdi mdi-arrow-up text-success"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
-                        </div>
-                    </div>
-                </div>
-                <!--end card body-->
+        <!-- Dynamic Table Responsive -->
+        <div class="block block-rounded">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">
+                    Dynamic Table <small>DataTables Responsive Mode</small>
+                </h3>
+                <a href="{{ route('pengguna_app.create') }}" class="btn btn-success btn-sm"> <i
+                        class="fa fa-plus"></i>Tambah
+                    Data</a>
             </div>
-            <!--end card-->
-        </div> <!-- end col-->
+            <div class="block-content block-content-full">
+                <!-- DataTables init on table by adding .js-dataTable-responsive class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
+                <table class="table table-bordered table-striped table-vcenter  datatable">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th style="width: 15%;">Role</th>
+                            <th style="width: 7%;">Foto</th>
+                            <th style="width: 12%;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-        <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">All Time</span>
-                        <h5 class="card-title mb-0">Daily Visits</h5>
-                    </div>
-                    <div class="row d-flex align-items-center mb-4">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                1,15,187
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                            <span class="text-muted">17.8% <i class="mdi mdi-arrow-down text-danger"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;">
-                        </div>
-                    </div>
-                </div>
-                <!--end card body-->
-            </div><!-- end card-->
-        </div> <!-- end col-->
-    </div>
-    <!-- end row-->
-
-
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header d-flex align-items-center">
-                    <h4 class="card-title">List Akun Pengguna</h4>
-                    <div class="card-tools ml-auto">
-                        <a href="{{ route('pengguna_app.create') }}" class="btn btn-success btn-sm" title="Tambah Pengguna">
-                            <i class="fas fa-plus"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-body">
-
-                    <table class="table dt-responsive nowrap datatable">
-                        <thead class="thead-light">
-                            {{-- <tr>
-                                <th rowspan="2" class="align-middle">Name</th>
-                                <th colspan="2">HR Information</th>
-                                <th colspan="3">Contact</th>
-                            </tr> --}}
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Foto</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div> <!-- end card body-->
-            </div> <!-- end card -->
-        </div><!-- end col-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Dynamic Table Responsive -->
     </div>
 @endsection
-@push('css-page')
-    <link href="{{ asset('template/admin/plugins/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet"
-        type="text/css" />
-    <link href="{{ asset('template/admin/plugins/datatables/responsive.bootstrap4.css') }}" rel="stylesheet"
-        type="text/css" />
-    <link href="{{ asset('template/admin/plugins/datatables/buttons.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('template/admin/plugins/datatables/select.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
-@endpush
+
 @push('js-page')
     <!-- third party js -->
-    <script src="{{ asset('template/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/dataTables.bootstrap4.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/buttons.flash.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/dataTables.keyTable.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/dataTables.select.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('template/admin/plugins/datatables/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('template/admin/assets/pages/datatables-demo.js') }}"></script>
+    <!-- jQuery (required for DataTables plugin) -->
+    <script src="{{ asset('template/admin/assets/js/lib/jquery.min.js') }}"></script>
+
+    <!-- Page JS Plugins -->
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}">
+    </script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
+    </script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-buttons/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-buttons-bs5/js/buttons.bootstrap5.min.js') }}">
+    </script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-buttons-jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-buttons-pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-buttons-pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-buttons/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('template/admin/assets/js/plugins/datatables-buttons/buttons.html5.min.js') }}"></script>
+
+    <!-- Page JS Code -->
+    <script src="{{ asset('template/admin/assets/js/pages/be_tables_datatables.min.js') }}"></script>
 
 
     <script type="text/javascript">
