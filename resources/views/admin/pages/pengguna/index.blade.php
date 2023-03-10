@@ -33,7 +33,7 @@
                 <table class="table table-bordered table-striped table-vcenter  datatable">
                     <thead>
                         <tr>
-                            <th class="text-center">No</th>
+                            <th class="text-center" style="width: 5%;">No</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th style="width: 15%;">Role</th>
