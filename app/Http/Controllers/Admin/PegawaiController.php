@@ -15,7 +15,7 @@ class PegawaiController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Pegawai::select('id', 'nama', 'nik', 'nip', 'id_jabatan', 'id_status', 'foto_diri')->get();
+            $data = Pegawai::getDataTable()->get();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
@@ -39,7 +39,18 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        //
+        $kelamin = [
+            [
+                'value' => 'Laki-laki',
+                'name' => 'Laki-laki'
+            ],
+            [
+                'value' => 'Perempuan',
+                'name' => 'Perempuan'
+            ]
+        ];
+        $judul = 'Tambah Pegawai';
+        return view('admin.pages.pegawai.create', compact('judul', 'kelamin'));
     }
 
     /**
@@ -47,7 +58,6 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -55,7 +65,9 @@ class PegawaiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Pegawai::findOrFail($id);
+        $judul = 'Detail Pegawai';
+        return view('admin.pages.pegawai.show', compact('judul', 'data'));
     }
 
     /**

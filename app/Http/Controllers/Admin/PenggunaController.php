@@ -23,7 +23,6 @@ class PenggunaController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     $btn = '<a href="' . route('pengguna_app.edit', $row->id) . '" class="btn btn-sm btn-info" data-bs-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-pencil-alt"></i></a> |';
-                    $btn .= '<a href="' . route('pengguna_app.show', $row->id) . '" class="btn btn-sm btn-warning" data-bs-toggle="tooltip" title="Show"><i class="fa fa-fw fa-eye"></i></a> |';
                     $btn .= '<a href="' . route('pengguna_app.destroy', $row->id) . '" onclick="confirmDelete()" class="btn btn-sm btn-danger" data-bs-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-times"></i></a>';
                     return $btn;
                 })

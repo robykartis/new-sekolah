@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SettingSeeder::class,
             PegawaiSeeder::class,
-            StatuspegawaiSeeder::class
+            StatuspegawaiSeeder::class,
+            PendidikanpegawaiSeeder::class
         ]);
     }
 }

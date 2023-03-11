@@ -27,7 +27,7 @@
 
             <li class="nav-main-heading">Managgement Pegawai</li>
 
-            <li class="nav-main-item {{ set_open(['jabatan.index', 'status.index']) }}">
+            <li class="nav-main-item {{ set_open(['jabatan.index', 'status.index', 'pendidikan.index']) }}">
                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
                     aria-expanded="false" href="#">
                     <i class="nav-main-link-icon si si-puzzle"></i>
@@ -45,17 +45,17 @@
                             <span class="nav-main-link-name">Status Pegawai</span>
                         </a>
                     </li>
-
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_blocks_forms.html">
-                            <span class="nav-main-link-name">Pendidikan</span>
+                        <a class="nav-main-link {{ set_active(['pendidikan.index']) }}"
+                            href="{{ route('pendidikan.index') }}">
+                            <span class="nav-main-link-name">Pendidikan Pegawai</span>
                         </a>
                     </li>
-
                 </ul>
             </li>
             <li class="nav-main-item">
-                <a class="nav-main-link {{ set_active(['pegawai.index']) }}" href="{{ route('pegawai.index') }}">
+                <a class="nav-main-link {{ set_active(['pegawai.index', 'pegawai.show', 'pegawai.create']) }}"
+                    href="{{ route('pegawai.index') }}">
                     <i class="nav-main-link-icon si si-user-following"></i>
                     <span class="nav-main-link-name">Pegawai</span>
                 </a>

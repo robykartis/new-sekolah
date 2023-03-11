@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    Pegawai
+    {{ $judul }}
 @endsection
 @section('breadcrumbs')
     {{ Breadcrumbs::render() }}
@@ -24,8 +24,7 @@
                 <h3 class="block-title">
                     {{ $judul }}
                 </h3>
-                <a href="{{ route('pengguna_app.create') }}" class="btn btn-success btn-sm"> <i
-                        class="fa fa-plus"></i>Tambah
+                <a href="{{ route('pegawai.create') }}" class="btn btn-success btn-sm"> <i class="fa fa-plus"></i>Tambah
                     Data</a>
             </div>
             <div class="block-content block-content-full">
@@ -109,12 +108,12 @@
                         name: 'nip'
                     },
                     {
-                        data: 'id_jabatan',
-                        name: 'id_jabatan'
+                        data: 'nama_jabatan',
+                        name: 'nama_jabatan'
                     },
                     {
-                        data: 'id_status',
-                        name: 'id_status'
+                        data: 'nama_status',
+                        name: 'nama_status'
                     },
                     {
                         data: 'foto_diri',

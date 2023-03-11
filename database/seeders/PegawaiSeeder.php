@@ -21,7 +21,7 @@ class PegawaiSeeder extends Seeder
             'npwp' => '34123412412',
             'foto_npwp' => '123.jpg',
             'jenis_kelamin' => 'Laki-laki',
-            'tanggal_lahir' => now(),
+            'tgl_lahir' => now(),
             'agama' => 'Islam',
             'nip' => '153453453',
             'id_pendidikan' => '1',
