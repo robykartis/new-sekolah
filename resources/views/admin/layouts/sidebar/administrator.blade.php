@@ -27,7 +27,7 @@
 
             <li class="nav-main-heading">Managgement Pegawai</li>
 
-            <li class="nav-main-item {{ set_open(['jabatan.index', 'jabatan.edit']) }}">
+            <li class="nav-main-item {{ set_open(['jabatan.index', 'status.index']) }}">
                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
                     aria-expanded="false" href="#">
                     <i class="nav-main-link-icon si si-puzzle"></i>
@@ -35,16 +35,17 @@
                 </a>
                 <ul class="nav-main-submenu">
                     <li class="nav-main-item">
-                        <a class="nav-main-link {{ set_active(['jabatan.index', 'jabatan.edit']) }}"
+                        <a class="nav-main-link {{ set_active(['jabatan.index']) }}"
                             href="{{ route('jabatan.index') }}">
-                            <span class="nav-main-link-name">Jabatan</span>
+                            <span class="nav-main-link-name">Jabatan Pegawai</span>
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_blocks_options.html">
-                            <span class="nav-main-link-name">Status</span>
+                        <a class="nav-main-link {{ set_active(['status.index']) }}" href="{{ route('status.index') }}">
+                            <span class="nav-main-link-name">Status Pegawai</span>
                         </a>
                     </li>
+
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="be_blocks_forms.html">
                             <span class="nav-main-link-name">Pendidikan</span>

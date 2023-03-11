@@ -44,7 +44,12 @@ Breadcrumbs::for('setting_app.edit', function (BreadcrumbTrail $trail, $id) {
 // Jabatan Pegawai
 Breadcrumbs::for('jabatan.index', function (BreadcrumbTrail $trail) {
     $trail->parent('administrator.index');
-    $trail->push('Jabatan', route('jabatan.index'));
+    $trail->push('Jabatan Pegawai', route('jabatan.index'));
+});
+// Status Pegawai
+Breadcrumbs::for('status.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('administrator.index');
+    $trail->push('Status Pegawai', route('status.index'));
 });
 // Pegawai
 Breadcrumbs::for('pegawai.index', function (BreadcrumbTrail $trail) {

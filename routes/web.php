@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PegawaiController;
 use App\Http\Controllers\Admin\PenggunaController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\StaffsekolahController;
+use App\Http\Controllers\Admin\StatusPegawaiController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +65,10 @@ Route::middleware(['auth', 'administrator:admin'])->group(function () {
         // Route Jabatan Pegawai
         Route::prefix('pegawai')->group(function () {
             Route::resource('jabatan', JabatanPegawaiController::class);
+        });
+        // Route Status Pegawai
+        Route::prefix('pegawai')->group(function () {
+            Route::resource('status', StatusPegawaiController::class);
         });
         // Route Pegawai
         Route::prefix('pegawai')->group(function () {
