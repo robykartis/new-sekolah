@@ -80,6 +80,7 @@ Route::middleware(['auth', 'administrator:admin'])->group(function () {
             Route::controller(PegawaiController::class)->group(function () {
                 Route::get('/', 'index')->name('pegawai.index');
                 Route::get('/tambah', 'create')->name('pegawai.create');
+                Route::post('/simpan', 'store')->name('pegawai.store');
                 Route::get('/edit/{id}', 'edit')->name('pegawai.edit');
                 Route::get('/detail/{id}', 'show')->name('pegawai.show');
                 Route::put('/rubah/{id}', 'update')->name('pegawai.update');
